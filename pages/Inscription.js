@@ -6,29 +6,26 @@ export default function Inscription({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Image source={user} style={{ width: 150, height: 150, marginTop: 25}} />
-
-            <View style={styles.nomPrenom}>
-
-                <View style={{marginRight: 50}}>
-                    <Text>Nom</Text>
-                    <TextInput style={styles.inputX } placeholder="     Nom"/>
-                </View>
-
-                <View>
-                    <Text>Prenom</Text>
-                    <TextInput style={styles.inputX } placeholder="     Prenom"/>
-                </View>
-
+            <Text style={styles.titreText}>Inscription</Text>
+                <Image source={user} style={{ width: 150, height: 150}} />
+                <View style={styles.nomPre}>
+                 <View style={styles.nom}>
+                      <Text>Nom</Text>
+                      <TextInput style={styles.inputX } placeholder="     Nom"/>
+                 </View>
+                 <View style={styles.prenom}>
+                      <Text>Prenom</Text>
+                      <TextInput style={styles.inputX } placeholder="     Prenom"/>
+                 </View>
             </View>
             <Text>Email</Text>
             <TextInput style={styles.input} placeholder="     Email"/>
 
             <Text>Mot de passe</Text>
-            <TextInput style={styles.input } placeholder="     ***"/>
+            <TextInput style={styles.input } placeholder="     ******"/>
 
             <Text>Répéter votre mot de passe</Text>
-            <TextInput style={styles.input } placeholder="     ***"/>
+            <TextInput style={styles.input } placeholder="     ******"/>
 
             <Button title={"Connexion"}/>
         </View>
@@ -46,24 +43,27 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 2,
         borderRadius: 20,
-        marginBottom: 10,
+        marginBottom: 20,
     },
     inputX: {
-        display: 'flex',
-        flexDirection: 'row',
         height: 40,
         width: 150,
         borderColor: 'black',
         borderWidth: 2,
         borderRadius: 20,
-        marginBottom: 10,
+
     },
-    nomPrenom: {
+    nom:{
+        marginRight:50,
+    },
+    nomPre: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 50,
-        marginBottom: 75,
-        justifyContent: 'space-between',
-    }
+        marginBottom: 70,
+    },
+    titreText: {
+         fontSize: 30,
+         fontWeight: 'bold',
+    },
 });
 

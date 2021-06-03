@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, Image, StyleSheet, Text, TextInput, View, Linking} from 'react-native';
 import user from "../assets/user.png";
 
 export default function Connexion({navigation}) {
@@ -15,6 +15,16 @@ export default function Connexion({navigation}) {
             <TextInput style={styles.textInput} placeholder="     ******"/>
 
             <Button title={"Connexion"} style={styles.buttonLog}/>
+
+            <Text style={styles.textLink}
+                  onPress={() => navigation.navigate('Chargement')}>
+                Mot de passe oublié ?
+            </Text>
+
+            <Text style={styles.textLink}
+                  onPress={() => navigation.navigate('Inscription')}>
+                Pas de compte ? Inscrivez-vous !
+            </Text>
         </View>
     );
 }
@@ -42,5 +52,9 @@ const styles = StyleSheet.create({
     buttonLog: {
         marginTop: 50,
 
+    },
+    textLink: {
+        color: 'blue',
+        marginTop: 20,
     },
 });

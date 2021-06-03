@@ -8,27 +8,38 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Chargement from "../pages/Chargement";
 import Connexion from "../pages/Connexion";
 import Inscription from "../pages/Inscription";
+import ModifierRelation from '../pages/ModifierRelation';
 
 export default function Navigation() {
 
     const tab = createBottomTabNavigator();
+
+    const sModifier = createStackNavigator();
+
+    const stackModifier = () => {
+        return (
+            <sModifier.Navigator>
+                <sModifier.Screen name="Modifier" component={ModifierRelation} />
+            </sModifier.Navigator>
+        )
+    }
 
     const sChargement = createStackNavigator();
 
     const stackChargement = () => {
         return (
             <sChargement.Navigator>
-                <sChargement.Screen name="Accueil" component={Chargement} />
+                <sChargement.Screen name="Chargement" component={Chargement} />
             </sChargement.Navigator>
         )
     }
 
     const sInscription = createStackNavigator();
 
-    const stackRInscription = () => {
+    const stackInscription = () => {
         return (
             <sInscription.Navigator>
-                <sInscription.Screen name="Ressource" component={Inscription}/>
+                <sInscription.Screen name="Inscription" component={Inscription}/>
             </sInscription.Navigator>
         )
     }
@@ -38,7 +49,7 @@ export default function Navigation() {
     const stackConnexion = () => {
         return (
             <sConnexion.Navigator>
-                <sConnexion.Screen name="Profil" component={Connexion}/>
+                <sConnexion.Screen name="Connexion" component={Connexion}/>
             </sConnexion.Navigator>
         )
     }
@@ -51,12 +62,12 @@ export default function Navigation() {
                         <MaterialCommunityIcons name="home" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Recherche" component={stackRInscription} options={{
+                <tab.Screen name="Recherche" component={stackModifier} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="shield-search" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Ressource" component={stackConnexion} options={{
+                <tab.Screen name="Ressource" component={stackInscription} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="plus" color={color} size={size} />
                     ),
