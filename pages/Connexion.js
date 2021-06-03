@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import user from "../assets/user.png";
 
-export default function Connexion() {
+export default function Connexion({navigation}) {
     return (
         <View style={styles.container}>
 

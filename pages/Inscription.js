@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 
-export default function Inscription() {
+export default function Inscription({navigation}) {
 
     return (
         <View style={styles.container}>
