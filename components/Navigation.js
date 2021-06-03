@@ -8,10 +8,21 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Chargement from "../pages/Chargement";
 import Connexion from "../pages/Connexion";
 import Inscription from "../pages/Inscription";
+import ModifierRelation from '../pages/ModifierRelation';
 
 export default function Navigation() {
 
     const tab = createBottomTabNavigator();
+
+    const sModifier = createStackNavigator();
+
+    const stackModifiert = () => {
+        return (
+            <sModifier.Navigator>
+                <sModifier.Screen name="Modifier" component={ModifierRelation} />
+            </sModifier.Navigator>
+        )
+    }
 
     const sChargement = createStackNavigator();
 
@@ -56,7 +67,7 @@ export default function Navigation() {
                         <MaterialCommunityIcons name="shield-search" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Ressource" component={stackConnexion} options={{
+                <tab.Screen name="Ressource" component={stackModifiert} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="plus" color={color} size={size} />
                     ),
