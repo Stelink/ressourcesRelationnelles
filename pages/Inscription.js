@@ -37,12 +37,16 @@ const styles = StyleSheet.create({
         width: 120,
         borderColor: 'black',
         borderWidth: 2,
+        borderRadius: 20,
     },
     inputX: {
         display: 'flex',
         flexDirection: 'row',
         height: 40,
         width: 150,
+        borderColor: 'black',
+        borderWidth: 2,
+        borderRadius: 20,
     }
 });
 

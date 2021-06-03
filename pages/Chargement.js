@@ -1,21 +1,28 @@
 import React from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
+import marianne from '../assets/marianne.jpg';
+import logo from '../assets/logo.png';
 
 export default function Chargement() {
 
     return (
         <View style={styles.container}>
-            <Text h1>Chargement</Text>
+            <Text style={styles.titreText}>CHARGEMENT</Text>
+            <Image source={marianne} style={{ width: 300, height: 155 }} />
+            <Image source={logo} style={{ width: 300, height: 155 }} />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    input: {
-        height: 40,
+    titreText: {
+        fontSize: 30,
+        fontWeight: 'bold',
     },
 });
 
