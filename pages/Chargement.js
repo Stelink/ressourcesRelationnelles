@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import marianne from '../assets/marianne.jpg';
 import logo from '../assets/logo.png';
 
-export default function Chargement() {
+export default function Chargement({navigation}) {
 
     return (
         <View style={styles.container}>
