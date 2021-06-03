@@ -41,6 +41,5 @@ const styles = StyleSheet.create({
     },
     buttonLog: {
         marginTop: 50,
-
     },
 });
