@@ -27,7 +27,7 @@ export default function Inscription({navigation}) {
             <Text>Répéter votre mot de passe</Text>
             <TextInput style={styles.input } placeholder="     ******"/>
 
-            <Button title={"Connexion"}/>
+            <Button title={"Insciption"}/>
         </View>
     );
 }
