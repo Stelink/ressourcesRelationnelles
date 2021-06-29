@@ -9,10 +9,32 @@ import Chargement from "../pages/Chargement";
 import Connexion from "../pages/Connexion";
 import Inscription from "../pages/Inscription";
 import ModifierRelation from '../pages/ModifierRelation';
+import Profil from "../pages/Profil";
+import CreateRessources from "../pages/CreateRessources";
 
 export default function Navigation() {
 
     const tab = createBottomTabNavigator();
+
+    const sProfil = createStackNavigator();
+
+    const stackProfil = () => {
+        return (
+            <sProfil.Navigator>
+                <sProfil.Screen name="Profil" component={Profil} />
+            </sProfil.Navigator>
+        )
+    }
+
+    const sCreateRessource = createStackNavigator();
+
+    const stackCreateRessource = () => {
+        return (
+            <sCreateRessource.Navigator>
+                <sCreateRessource.Screen name="Créer une ressource" component={CreateRessources} />
+            </sCreateRessource.Navigator>
+        )
+    }
 
     const sModifier = createStackNavigator();
 
@@ -67,12 +89,12 @@ export default function Navigation() {
                         <MaterialCommunityIcons name="shield-search" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Ressource" component={stackInscription} options={{
+                <tab.Screen name="Ressources" component={stackCreateRessource} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="plus" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Profil" component={stackConnexion} options={{
+                <tab.Screen name="Connexion" component={stackConnexion} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="account" color={color} size={size} />
                     ),

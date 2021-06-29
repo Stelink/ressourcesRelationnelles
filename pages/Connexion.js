@@ -1,9 +1,13 @@
 import React from 'react';
 import {Button, Image, StyleSheet, Text, TextInput, View, Linking} from 'react-native';
 import user from "../assets/user.png";
+import Profil from "./Profil";
+import {Link, NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Connexion({navigation}) {
     return (
+
         <View style={styles.container}>
 
             <Text style={styles.titreText}>Login Screen</Text>
@@ -14,18 +18,23 @@ export default function Connexion({navigation}) {
             <Text>Mot de passe</Text>
             <TextInput style={styles.textInput} placeholder="     ******"/>
 
-            <Button title={"Connexion"} style={styles.buttonLog}/>
+            <Button
+                title={"Connexion"}
+                style={styles.buttonLog}
+                onPress={() => navigation.navigate('Profil')}
+            />
 
             <Text style={styles.textLink}
-                  onPress={() => navigation.navigate('Chargement')}>
+                  onPress={() => navigation.navigate('Profil')}>
                 Mot de passe oublié ?
             </Text>
-
+            <Link to={Profil}>tt</Link>
             <Text style={styles.textLink}
                   onPress={() => navigation.navigate('Inscription')}>
                 Pas de compte ? Inscrivez-vous !
             </Text>
         </View>
+
     );
 }
 
