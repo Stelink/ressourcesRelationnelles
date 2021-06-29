@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Navigation from "./components/Navigation";
+import ListRessource from "./pages/ListRessource";
+
 
 export default function App() {
+
+
   return (
-      Navigation()
+      <Navigation/>
   );
 }
 

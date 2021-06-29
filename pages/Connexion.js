@@ -28,7 +28,7 @@ export default function Connexion({navigation}) {
                   onPress={() => navigation.navigate('Profil')}>
                 Mot de passe oublié ?
             </Text>
-            <Link to={Profil}>tt</Link>
+
             <Text style={styles.textLink}
                   onPress={() => navigation.navigate('Inscription')}>
                 Pas de compte ? Inscrivez-vous !

@@ -11,10 +11,21 @@ import Inscription from "../pages/Inscription";
 import ModifierRelation from '../pages/ModifierRelation';
 import Profil from "../pages/Profil";
 import CreateRessources from "../pages/CreateRessources";
+import ListRessource from "../pages/ListRessource";
 
 export default function Navigation() {
 
     const tab = createBottomTabNavigator();
+
+    const sListRessource = createStackNavigator();
+
+    const stackListRessource = () => {
+        return (
+            <sListRessource.Navigator>
+                <sListRessource.Screen name="Ressources" component={ListRessource} />
+            </sListRessource.Navigator>
+        )
+    }
 
     const sProfil = createStackNavigator();
 
@@ -79,7 +90,7 @@ export default function Navigation() {
     return (
         <NavigationContainer>
             <tab.Navigator>
-                <tab.Screen name="Accueil" component={stackChargement} options={{
+                <tab.Screen name="Accueil" component={stackListRessource} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="home" color={color} size={size} />
                     ),
