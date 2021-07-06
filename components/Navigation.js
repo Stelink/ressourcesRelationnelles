@@ -12,6 +12,7 @@ import ModifierRelation from '../pages/ModifierRelation';
 import Profil from "../pages/Profil";
 import CreateRessources from "../pages/CreateRessources";
 import ListRessource from "../pages/ListRessource";
+import Recherche from "../pages/Recherche";
 
 export default function Navigation() {
 
@@ -24,6 +25,16 @@ export default function Navigation() {
             <sListRessource.Navigator>
                 <sListRessource.Screen name="Ressources" component={ListRessource} />
             </sListRessource.Navigator>
+        )
+    }
+
+    const sRecherche = createStackNavigator();
+
+    const stackRecherche = () => {
+        return (
+            <sRecherche.Navigator>
+                <sRecherche.Screen name="Ressources" component={Recherche} />
+            </sRecherche.Navigator>
         )
     }
 
@@ -95,7 +106,7 @@ export default function Navigation() {
                         <MaterialCommunityIcons name="home" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Recherche" component={stackModifier} options={{
+                <tab.Screen name="Recherche" component={stackRecherche} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="shield-search" color={color} size={size} />
                     ),

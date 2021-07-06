@@ -1,11 +1,8 @@
 import React from 'react';
 import {Button, Image, StyleSheet, Text, TextInput, View, Linking} from 'react-native';
 import user from "../assets/user.png";
-import Profil from "./Profil";
-import {Link, NavigationContainer} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Connexion({navigation}) {
+export default function Connexion({navigation, stackStack}) {
     return (
 
         <View style={styles.container}>
