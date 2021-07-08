@@ -2,6 +2,13 @@ import * as React from 'react';
 import {View, StyleSheet, Image, Button, Text, TouchableOpacity, Pressable} from 'react-native';
 import sasha from '../assets/user.png';
 import marianne from '../assets/marianne.jpg';
+import option from '../assets/profil/option.png';
+import relation from '../assets/profil/relation.png';
+import profilPic from '../assets/profil/api_thumb_450.jpg';
+import erune from '../assets/ERUNE.png';
+import auvergne from '../assets/auvergne.png';
+
+
 
 export default function Profil({navigation}) {
 
@@ -12,10 +19,6 @@ export default function Profil({navigation}) {
                         onPress={() => navigation.navigate('Connexion')}
                         title="..."
                         color= "#000"
-                        headerTintColor: "white"
-                        headerStyle: {
-                        backgroundColor: '#e6097a',
-                        }
                 />
 
             ),
@@ -25,8 +28,8 @@ export default function Profil({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.moveImg}>
-                <Image source={sasha} style={styles.img}/>
-                <Text style={{fontWeight: 'bold',fontSize: 25}}>SASHA KETCHUM</Text>
+                <Image source={profilPic} style={styles.profilPic}/>
+                <Text style={{fontWeight: 'bold',fontSize: 25}}>BILL KETCHUM</Text>
                 <Text tyle={{fontSize: 15}}>Citoyenne</Text>
             </View>
             <View style={styles.bouton}>
@@ -35,11 +38,11 @@ export default function Profil({navigation}) {
                     <Text style={styles.bouttonOption}>Amis</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Modifier')} >
-                    <Image source={sasha} style={styles.img}/>
+                    <Image source={relation} style={styles.img}/>
                     <Text style={styles.bouttonOption}>Relation</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={sasha} style={styles.img}/>
+                    <Image source={option} style={styles.img}/>
                     <Text style={styles.bouttonOption}>option</Text>
                 </TouchableOpacity>
             </View>
@@ -51,16 +54,10 @@ export default function Profil({navigation}) {
 
             <View style={styles.posteClic}>
                 <TouchableOpacity>
-                    <Image source={marianne} style={styles.img2}/>
+                    <Image source={erune} style={styles.img2}/>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={marianne} style={styles.img2}/>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image source={marianne} style={styles.img2}/>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image source={marianne} style={styles.img2}/>
+                    <Image source={auvergne} style={styles.img2}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -78,6 +75,11 @@ const styles = StyleSheet.create({
     img: {
         width: 100,
         height: 100,
+    },
+    profilPic: {
+        width: 150,
+        height: 150,
+        borderRadius: 100,
     },
     img2: {
         width: 150,
