@@ -5,7 +5,7 @@ import ERUNE from "../assets/ERUNE.png";
 export default function RessourceItem(props){
 
     return (
-        <TouchableOpacity >
+        <TouchableOpacity>
             <View style={sScrollItem.container}>
                 <Text style={sScrollItem.title}>{props.item.name}</Text>
                 <Text style={{fontSize: 10}}>{props.item.img}</Text>

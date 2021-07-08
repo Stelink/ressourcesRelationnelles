@@ -1,32 +1,44 @@
 import * as React from 'react';
-import {View, StyleSheet, Image, Button, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Image, Button, Text, TouchableOpacity, Pressable} from 'react-native';
 import sasha from '../assets/user.png';
 import marianne from '../assets/marianne.jpg';
-import DropDownPicker from 'react-native-dropdown-picker';
 
-export default function Profil() {
+export default function Profil({navigation}) {
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <Button style={styles.headerButton}
+                        onPress={() => navigation.navigate('Connexion')}
+                        title="..."
+                        color= "#000"
+                        headerTintColor: "white"
+                        headerStyle: {
+                        backgroundColor: '#e6097a',
+                        }
+                />
+
+            ),
+        });
+    }, [navigation]);
 
     return (
         <View style={styles.container}>
             <View style={styles.moveImg}>
                 <Image source={sasha} style={styles.img}/>
-
                 <Text style={{fontWeight: 'bold',fontSize: 25}}>SASHA KETCHUM</Text>
                 <Text tyle={{fontSize: 15}}>Citoyenne</Text>
             </View>
             <View style={styles.bouton}>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={sasha} style={styles.img}/>
                     <Text style={styles.bouttonOption}>Amis</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Modifier')} >
                     <Image source={sasha} style={styles.img}/>
                     <Text style={styles.bouttonOption}>Relation</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={sasha} style={styles.img}/>
                     <Text style={styles.bouttonOption}>option</Text>
                 </TouchableOpacity>
@@ -38,33 +50,19 @@ export default function Profil() {
             </View>
 
             <View style={styles.posteClic}>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={marianne} style={styles.img2}/>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={marianne} style={styles.img2}/>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={marianne} style={styles.img2}/>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => alert('Hello, world!')}>
+                <TouchableOpacity>
                     <Image source={marianne} style={styles.img2}/>
                 </TouchableOpacity>
             </View>
-
-            <DropDownPicker
-                items={[
-                    {label: 'Item 1', value: 'item1'},
-                    {label: 'Item 2', value: 'item2'},
-                ]}
-                defaultIndex={0}
-                containerStyle={{height: 40}}
-                onChangeItem={item => console.log(item.label, item.value)}
-            />
         </View>
     );
 }
@@ -109,5 +107,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderTopColor: 'black',
         borderTopWidth: 1,
+    },
+    headerButton:{
+        padding: 15,
     }
 });

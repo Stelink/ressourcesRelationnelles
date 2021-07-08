@@ -69,7 +69,6 @@ export default function CreateRessources() {
             <Button
                 title={"Publier"}
                 style={{}}
-                onPress={() => navigation.navigate('Profil')}
             />
     </View>
 

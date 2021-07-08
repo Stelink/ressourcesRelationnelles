@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Image, StyleSheet, Text, TextInput, View, Linking} from 'react-native';
 import user from "../assets/user.png";
 
-export default function Connexion({navigation, stackStack}) {
+export default function Connexion({navigation}) {
     return (
 
         <View style={styles.container}>
@@ -28,7 +28,7 @@ export default function Connexion({navigation, stackStack}) {
 
             <Text style={styles.textLink}
                   onPress={() => navigation.navigate('Inscription')}>
-                Pas de compte ? Inscrivez-vous !
+                  Pas de compte ? Inscrivez-vous !
             </Text>
         </View>
 

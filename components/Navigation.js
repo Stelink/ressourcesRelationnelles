@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Button } from 'react-native';
 
 import Chargement from "../pages/Chargement";
 import Connexion from "../pages/Connexion";
@@ -14,7 +15,7 @@ import CreateRessources from "../pages/CreateRessources";
 import ListRessource from "../pages/ListRessource";
 import Recherche from "../pages/Recherche";
 
-export default function Navigation() {
+export default function Navigation({navigation}) {
 
     const tab = createBottomTabNavigator();
 
@@ -43,7 +44,10 @@ export default function Navigation() {
     const stackProfil = () => {
         return (
             <sProfil.Navigator>
-                <sProfil.Screen name="Profil" component={Profil} />
+                <sProfil.Screen name="Profil" component={Profil}/>
+                <sConnexion.Screen name="Connexion" component={Connexion}/>
+                <sInscription.Screen name="Inscription" component={Inscription}/>
+                <sModifier.Screen name="Modifier" component={ModifierRelation}/>
             </sProfil.Navigator>
         )
     }
@@ -94,6 +98,7 @@ export default function Navigation() {
         return (
             <sConnexion.Navigator>
                 <sConnexion.Screen name="Connexion" component={Connexion}/>
+                <sInscription.Screen name="Inscription" component={Inscription}/>
             </sConnexion.Navigator>
         )
     }
@@ -102,7 +107,7 @@ export default function Navigation() {
         <NavigationContainer>
             <tab.Navigator>
                 <tab.Screen name="Accueil" component={stackListRessource} options={{
-                    tabBarIcon: ({ color, size }) => (
+                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="home" color={color} size={size} />
                     ),
                 }}/>
@@ -116,7 +121,7 @@ export default function Navigation() {
                         <MaterialCommunityIcons name="plus" color={color} size={size} />
                     ),
                 }}/>
-                <tab.Screen name="Connexion" component={stackConnexion} options={{
+                <tab.Screen name="Profil" component={stackProfil} options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="account" color={color} size={size} />
                     ),
